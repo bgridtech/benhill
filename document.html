@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandatory Disclosure - Benhill English School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#822811',secondary:'#0b1a36'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+        .title-font {
+            font-family: 'Merriweather', serif;
+        }
+        .document-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .document-card {
+            transition: all 0.2s ease-in-out;
+        }
+        input[type="search"]::-webkit-search-decoration,
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-results-button,
+        input[type="search"]::-webkit-search-results-decoration {
+            display: none;
+        }
+        input[type="search"] {
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Benhill English School</a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                <a href="/about.html" class="text-secondary hover:text-primary transition-colors">About Us</a>
+                <a href="/index.html#facilities" class="text-secondary hover:text-primary transition-colors">Facilities</a>
+                <a href="/document.html" class="text-primary font-medium">Mandatory Disclosure</a>
+                <a href="/gallary.html" class="text-secondary hover:text-primary transition-colors">Gallery</a>
+                <a href="/admission.html" class="text-secondary hover:text-primary transition-colors">Admissions</a>
+                <a href="/contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a>
+                <a href="/uniform.html" class="text-secondary hover:text-primary transition-colors">Uniform</a>
+            </nav>
+            <!-- Hamburger icon for mobile -->
+            <button class="md:hidden flex items-center justify-center w-10 h-10" id="mobileMenuButton" aria-label="Open menu">
+                <i class="ri-menu-line text-secondary text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 hidden">
+        <div class="absolute right-0 top-0 w-72 max-w-full h-full bg-white shadow-lg flex flex-col">
+            <div class="flex justify-between items-center px-6 py-4 border-b">
+                <span class="text-xl font-bold text-primary">Menu</span>
+                <button id="closeMobileMenu" class="text-2xl text-secondary" aria-label="Close menu">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4 px-6 py-6">
+                <a href="/index.html" class="text-secondary font-semibold">Home</a>
+                <a href="/about.html" class="text-secondary">About Us</a>
+                <a href="/index.html#facilities" class="text-secondary">Facilities</a>
+                <a href="/document.html" class="text-primary font-medium">Mandatory Disclosure</a>
+                <a href="/gallary.html" class="text-secondary">Gallery</a>
+                <a href="/admission.html" class="text-secondary">Admissions</a>
+                <a href="/contact.html" class="text-secondary">Contact</a>
+                <a href="/uniform.html" class="text-secondary">Uniform</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="bg-gray-100 py-2">
+        <div class="container mx-auto px-4">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3 text-sm">
+                    <li class="inline-flex items-center">
+                        <a href="#" class="text-gray-600 hover:text-primary">Home</a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center text-gray-400">
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                            <a href="#" class="text-gray-600 hover:text-primary ml-1 md:ml-2">About Us</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center text-gray-400">
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                            <span class="text-primary font-medium ml-1 md:ml-2">Mandatory Disclosure</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8 md:mb-12">
+                <h1 class="title-font text-3xl md:text-4xl font-bold text-primary mb-4">MANDATORY DISCLOSURE</h1>
+                <p class="text-gray-700 max-w-3xl mx-auto">
+                    In accordance with the CBSE norms and government directives, Benhill English School publicly discloses the following documents and institutional information.
+                </p>
+                <div class="h-1 w-24 bg-secondary mx-auto mt-6"></div>
+            </div>
+
+            <div class="mb-8">
+                <div class="relative">
+                    <div class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 flex items-center justify-center">
+                        <i class="ri-search-line"></i>
+                    </div>
+                    <input type="search" placeholder="Search documents..." class="w-full pl-10 pr-4 py-3 rounded border-gray-200 border focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Document 1 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">ICCM</h3>
+                            <p class="text-sm text-gray-600 mb-3">Integrated Comprehensive Compliance Module</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 2 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Copy of DEO Certificate</h3>
+                            <p class="text-sm text-gray-600 mb-3">District Education Officer Certificate</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 3 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-excel-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Last Three Years' Results</h3>
+                            <p class="text-sm text-gray-600 mb-3">Academic performance records (2022-2024)</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 4 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Self-Declaration Certificate</h3>
+                            <p class="text-sm text-gray-600 mb-3">Institutional self-declaration of compliance</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 5 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Trust Registration Certificate</h3>
+                            <p class="text-sm text-gray-600 mb-3">Legal registration document of school trust</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 6 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Water, Health, and Sanitation Certificate</h3>
+                            <p class="text-sm text-gray-600 mb-3">Health and safety compliance document</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 7 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Recognition Certificate</h3>
+                            <p class="text-sm text-gray-600 mb-3">Official educational recognition document</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 8 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">No Objection Certificate (NOC)</h3>
+                            <p class="text-sm text-gray-600 mb-3">Regulatory permission document</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 9 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Affiliation Status – 2025</h3>
+                            <p class="text-sm text-gray-600 mb-3">Current CBSE affiliation status document</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 10 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-50 flex items-center justify-center text-secondary mr-4">
+                            <i class="ri-file-list-3-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Details of Infrastructure</h3>
+                            <p class="text-sm text-gray-600 mb-3">Comprehensive facility and infrastructure report</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 11 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Building Safety Certificate</h3>
+                            <p class="text-sm text-gray-600 mb-3">Structural safety compliance document</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 12 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Fire and Safety Certificate</h3>
+                            <p class="text-sm text-gray-600 mb-3">Fire department compliance document</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 13 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-50 flex items-center justify-center text-secondary mr-4">
+                            <i class="ri-file-excel-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Fee Structure</h3>
+                            <p class="text-sm text-gray-600 mb-3">Current academic year fee details</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 14 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-blue-50 flex items-center justify-center text-secondary mr-4">
+                            <i class="ri-calendar-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">School Calendar</h3>
+                            <p class="text-sm text-gray-600 mb-3">Academic year 2025-2026 calendar</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 15 - Coming Soon -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden opacity-75">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 mr-4">
+                            <i class="ri-file-list-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-gray-600 mb-1">SMC (School Management Committee) Details</h3>
+                            <p class="text-sm text-gray-500 mb-3">Committee members and meeting minutes</p>
+                            <button disabled class="inline-flex items-center text-sm font-medium text-white bg-gray-400 px-4 py-2 !rounded-button whitespace-nowrap cursor-not-allowed">
+                                <span>Coming Soon</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 16 - Coming Soon -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden opacity-75">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 mr-4">
+                            <i class="ri-team-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-gray-600 mb-1">PTA Members List</h3>
+                            <p class="text-sm text-gray-500 mb-3">Parent-Teacher Association membership details</p>
+                            <button disabled class="inline-flex items-center text-sm font-medium text-white bg-gray-400 px-4 py-2 !rounded-button whitespace-nowrap cursor-not-allowed">
+                                <span>Coming Soon</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 17 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Appendix IX</h3>
+                            <p class="text-sm text-gray-600 mb-3">CBSE mandatory disclosure appendix</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document 18 -->
+                <div class="document-card bg-white rounded shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 flex items-start">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-red-50 flex items-center justify-center text-primary mr-4">
+                            <i class="ri-file-pdf-line ri-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-semibold text-secondary mb-1">Transfer Certificate (TC) Sample</h3>
+                            <p class="text-sm text-gray-600 mb-3">Sample format of student transfer document</p>
+                            <a href="#" target="_blank" class="inline-flex items-center text-sm font-medium text-white bg-primary hover:bg-primary/90 px-4 py-2 !rounded-button whitespace-nowrap">
+                                <span>View Document</span>
+                                <div class="w-4 h-4 ml-1.5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center text-sm text-gray-500">
+                <p>Last updated: June 3, 2025</p>
+                <p class="mt-1">For any queries regarding these documents, please contact the school administration office.</p>
+            </div>
+
+            <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+                <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-arrow-up-line"></i>
+                </div>
+            </button>
+        </div>
+    </main>
+
+    <footer class="bg-secondary text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-['Pacifico'] text-2xl mb-4">logo</h3>
+                    <p class="text-gray-300 text-sm">Benhill English School is committed to educational excellence and holistic development of students since 1985.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Academics</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Admissions</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Facilities</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Information</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex-shrink-0 mt-0.5 flex items-center justify-center text-gray-300 mr-2">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-300">123 Education Road, Academic District, New Delhi - 110001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex-shrink-0 flex items-center justify-center text-gray-300 mr-2">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-300">+91 11 2345 6789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex-shrink-0 flex items-center justify-center text-gray-300 mr-2">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-300">info@benhillschool.edu.in</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+                            <i class="ri-twitter-x-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+                            <i class="ri-instagram-line text-white"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+                            <i class="ri-youtube-fill text-white"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-300 text-sm">Subscribe to our newsletter for updates</p>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Your email" class="text-sm py-2 px-3 border-none outline-none rounded-l-button bg-white/10 text-white placeholder-gray-300 flex-grow">
+                        <button class="bg-primary hover:bg-primary/90 text-white py-2 px-4 text-sm font-medium !rounded-r-button whitespace-nowrap">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-6 text-center text-sm text-gray-400">
+                <p>© 2025 Benhill English School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="search-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('input[type="search"]');
+            const documentCards = document.querySelectorAll('.document-card');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                documentCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="back-to-top-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script id="mobile-navigation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById("mobileMenuButton");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const closeMobileMenu = document.getElementById("closeMobileMenu");
+
+            mobileMenuButton.addEventListener("click", function () {
+                mobileMenu.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+            });
+
+            closeMobileMenu.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                document.body.style.overflow = "";
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.add("hidden");
+                    document.body.style.overflow = "";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

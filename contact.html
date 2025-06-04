@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact With Us - Benhill English School</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#822811',secondary:'#0b1a36'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #822811;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .form-label {
+            position: absolute;
+            top: 0.75rem;
+            left: 1rem;
+            color: #6b7280;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus ~ .form-label,
+        .form-control:not(:placeholder-shown) ~ .form-label {
+            top: -0.5rem;
+            left: 0.75rem;
+            font-size: 0.75rem;
+            padding: 0 0.25rem;
+            background-color: white;
+            color: #822811;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Benhill English School</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                <a href="/about.html" class="text-secondary hover:text-primary transition-colors">About Us</a>
+                <a href="/index.html#facilities" class="text-secondary hover:text-primary transition-colors">Facilities</a>
+                <a href="/document" class="text-secondary hover:text-primary transition-colors">Mandatory Disclosure</a>
+                <a href="/gallary.html" class="text-secondary hover:text-primary transition-colors">Gallery</a>
+                <a href="/admission.html" class="text-secondary hover:text-primary transition-colors">Admissions</a>
+                <a href="/contact.html" class="text-primary font-medium">Contact</a>
+                <a href="/uniform.html" class="text-secondary hover:text-primary transition-colors">Uniform</a>
+            </nav>
+            <!-- Hamburger icon for mobile -->
+            <button class="md:hidden flex items-center justify-center w-10 h-10" id="mobileMenuButton" aria-label="Open menu">
+                <i class="ri-menu-line text-secondary text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 hidden">
+        <div class="absolute right-0 top-0 w-72 max-w-full h-full bg-white shadow-lg flex flex-col">
+            <div class="flex justify-between items-center px-6 py-4 border-b">
+                <span class="text-xl font-bold text-primary">Menu</span>
+                <button id="closeMobileMenu" class="text-2xl text-secondary" aria-label="Close menu">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4 px-6 py-6">
+                <a href="/index.html" class="text-secondary font-semibold">Home</a>
+                <a href="/about.html" class="text-secondary">About Us</a>
+                <a href="/index.html#facilities" class="text-secondary">Facilities</a>
+                <a href="/document" class="text-secondary">Mandatory Disclosure</a>
+                <a href="/gallary.html" class="text-secondary">Gallery</a>
+                <a href="/admission.html" class="text-secondary">Admissions</a>
+                <a href="/contact.html" class="text-primary font-medium">Contact</a>
+                <a href="/uniform.html" class="text-secondary">Uniform</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-12">
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">Contact With Us</h1>
+            <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+            <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">
+                We at Benhill impart a quality education rooted in the 1500-year tradition of Benedictine ideals — an education that prepares not only for a career but also for service to people.
+            </p>
+        </section>
+
+        <div class="flex flex-col md:flex-row gap-8 mb-16">
+            <div class="md:w-2/5 bg-white p-8 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-secondary mb-6">For Enquiries Regarding Admissions Please Contact Us</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 flex items-center justify-center text-primary mr-4 mt-1">
+                            <i class="ri-map-pin-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900 mb-1">Address</h3>
+                            <p class="text-gray-600">
+                                Benhill English School<br>
+                                Kunnoth, Iritty P.O<br>
+                                670 703
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 flex items-center justify-center text-primary mr-4 mt-1">
+                            <i class="ri-phone-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900 mb-1">Phone</h3>
+                            <p class="text-gray-600">
+                                <a href="tel:+914902494788" class="hover:text-primary transition-colors">+91 0490 2 494 788</a>
+                            </p>
+                            <p class="text-gray-600 mt-1">
+                                <a href="tel:+918547529788" class="hover:text-primary transition-colors">+91 8547 529 788</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 flex items-center justify-center text-primary mr-4 mt-1">
+                            <i class="ri-mail-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900 mb-1">Email</h3>
+                            <p class="text-gray-600">
+                                <a href="mailto:benhillenglishschool@gmail.com" class="hover:text-primary transition-colors">benhillenglishschool@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 flex items-center justify-center text-primary mr-4 mt-1">
+                            <i class="ri-time-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-900 mb-1">Office Hours</h3>
+                            <p class="text-gray-600">
+                                Monday - Friday: 8:00 AM - 4:00 PM<br>
+                                Saturday: 9:00 AM - 12:00 PM<br>
+                                Sunday: Closed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-3/5">
+                <div class="h-full rounded-lg overflow-hidden shadow-md">
+                    <div class="w-full h-full" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover;"></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="bg-white rounded-lg shadow-md p-8 mb-16">
+            <h2 class="text-2xl font-semibold text-secondary mb-6 text-center">Send Us a Message</h2>
+            <form id="contactForm" class="max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder=" " required>
+                        <label for="name" class="form-label">Full Name</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder=" " required>
+                        <label for="email" class="form-label">Email Address</label>
+                    </div>
+                </div>
+                
+                <div class="form-group mb-6">
+                    <input type="text" class="form-control" id="subject" placeholder=" " required>
+                    <label for="subject" class="form-label">Subject</label>
+                </div>
+                
+                <div class="form-group mb-6">
+                    <textarea class="form-control" id="message" rows="5" placeholder=" " required></textarea>
+                    <label for="message" class="form-label">Message</label>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="bg-primary hover:bg-primary/90 text-white py-3 px-8 rounded-button transition-colors whitespace-nowrap">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-2xl font-semibold text-secondary mb-6 text-center">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">What are the admission requirements?</h3>
+                    <p class="text-gray-600">Admission requirements vary by grade level. Generally, we require previous academic records, an entrance assessment, and an interview with both the student and parents.</p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">What is the school's curriculum?</h3>
+                    <p class="text-gray-600">Benhill English School follows the CBSE curriculum with additional emphasis on language skills, mathematics, sciences, and holistic development through co-curricular activities.</p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Are there transportation services available?</h3>
+                    <p class="text-gray-600">Yes, we provide transportation services covering major routes around Iritty. The exact routes and schedules are available at the administrative office.</p>
+                </div>
+                
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">What extracurricular activities do you offer?</h3>
+                    <p class="text-gray-600">We offer a wide range of activities including sports, music, dance, art, debate, robotics, and various clubs to foster all-round development of our students.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-secondary text-white mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Benhill English School</h3>
+                    <p class="mb-4">Providing quality education since 1985, nurturing young minds to become responsible global citizens.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-youtube-line ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Academics</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Admissions</a></li>
+                        <li><a href="/gallary.html" class="hover:text-primary transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <ul class="space-y-3">
+                        <li class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span>Kunnoth, Iritty P.O, 670 703</span>
+                        </li>
+                        <li class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span>+91 0490 2 494 788</span>
+                        </li>
+                        <li class="flex">
+                            <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span>benhillenglishschool@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2025 Benhill English School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="formHandler">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Here you would typically send the data to a server
+                    // For demo purposes, we'll just log it and show a success message
+                    console.log('Form submitted:', { name, email, subject, message });
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Show success message (in a real implementation)
+                    alert('Thank you for your message. We will get back to you soon!');
+                });
+            }
+        });
+    </script>
+    <script id="mobile-navigation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById("mobileMenuButton");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const closeMobileMenu = document.getElementById("closeMobileMenu");
+
+            mobileMenuButton.addEventListener("click", function () {
+                mobileMenu.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+            });
+
+            closeMobileMenu.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                document.body.style.overflow = "";
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.add("hidden");
+                    document.body.style.overflow = "";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

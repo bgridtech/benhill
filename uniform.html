@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benhill English School - Uniform Samples</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#822811',secondary:'#0b1a36'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .uniform-card:hover img {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .uniform-card img {
+            transition: transform 0.3s ease;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        .nav-link.active {
+            border-bottom: 3px solid #822811;
+            color: #822811;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .uniform-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Benhill English School</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                <a href="/about.html" class="text-secondary hover:text-primary transition-colors">About Us</a>
+                <a href="/index.html#facilities" class="text-secondary hover:text-primary transition-colors">Facilities</a>
+                <a href="/document.html" class="text-secondary hover:text-primary transition-colors">Mandatory Disclosure</a>
+                <a href="/gallary.html" class="text-secondary hover:text-primary transition-colors">Gallery</a>
+                <a href="/admission.html" class="text-secondary hover:text-primary transition-colors">Admissions</a>
+                <a href="/contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a>
+                <a href="/uniform.html" class="text-primary font-medium">Uniform</a>
+            </nav>
+            <!-- Hamburger icon for mobile -->
+            <button class="md:hidden flex items-center justify-center w-10 h-10" id="mobileMenuButton" aria-label="Open menu">
+                <i class="ri-menu-line text-secondary text-2xl"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu" class="fixed inset-0 z-[999] bg-black/60 hidden">
+        <div class="absolute right-0 top-0 w-72 max-w-full h-full bg-white shadow-lg flex flex-col">
+            <div class="flex justify-between items-center px-6 py-4 border-b">
+                <span class="text-xl font-bold text-primary">Menu</span>
+                <button id="closeMobileMenu" class="text-2xl text-secondary" aria-label="Close menu">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4 px-6 py-6">
+                <a href="/index.html" class="text-secondary font-semibold">Home</a>
+                <a href="/about.html" class="text-secondary">About Us</a>
+                <a href="/index.html#facilities" class="text-secondary">Facilities</a>
+                <a href="/document.html" class="text-secondary">Mandatory Disclosure</a>
+                <a href="/gallary.html" class="text-secondary">Gallery</a>
+                <a href="/admission.html" class="text-secondary">Admissions</a>
+                <a href="/contact.html" class="text-secondary">Contact</a>
+                <a href="/uniform.html" class="text-primary font-medium">Uniform</a>
+            </nav>
+        </div>
+    </div>
+
+    <header class="w-full bg-white py-6 shadow-sm">
+      
+    </header>
+
+    <nav class="sticky top-0 bg-white shadow-md z-50 py-3">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center md:justify-center space-x-6 overflow-x-auto pb-1">
+                <a href="#kindergarten" class="nav-link whitespace-nowrap text-secondary hover:text-primary px-2 py-1 transition-colors duration-200">Kindergarten</a>
+                <a href="#primary" class="nav-link whitespace-nowrap text-secondary hover:text-primary px-2 py-1 transition-colors duration-200">Primary School</a>
+                <a href="#middle" class="nav-link whitespace-nowrap text-secondary hover:text-primary px-2 py-1 transition-colors duration-200">Middle School</a>
+                <a href="#senior" class="nav-link whitespace-nowrap text-secondary hover:text-primary px-2 py-1 transition-colors duration-200">Senior School</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="kindergarten" class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary mb-6 pb-2 border-b-2 border-primary">Kindergarten</h2>
+            <div class="uniform-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="uniform-card bg-[#f8f8f8] rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="overflow-hidden h-64 md:h-80">
+                        <img src="https://readdy.ai/api/search-image?query=A%20high-quality%20photograph%20of%20a%20young%20boy%20aged%205-6%20wearing%20a%20kindergarten%20school%20uniform.%20The%20uniform%20consists%20of%20a%20white%20short-sleeved%20shirt%2C%20maroon%20shorts%2C%20white%20socks%2C%20and%20black%20shoes.%20The%20boy%20is%20standing%20straight%2C%20facing%20the%20camera%20with%20a%20neutral%20background.%20The%20image%20is%20well-lit%2C%20clear%2C%20and%20professional%2C%20showing%20the%20complete%20uniform%20from%20head%20to%20toe.&width=600&height=800&seq=1&orientation=portrait" alt="Kindergarten Boys Uniform" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Boys Daily Uniform</h3>
+                        <p class="text-gray-700 mb-4">Our kindergarten boys wear comfortable white short-sleeved shirts paired with maroon shorts. This practical uniform allows for ease of movement during play and learning activities.</p>
+                        <div class="text-sm text-gray-600">
+                            <p class="mb-1"><span class="font-medium">Optional items:</span> Maroon cardigan for cooler days</p>
+                            <p class="text-xs italic mt-4">Designs may slightly vary</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="uniform-card bg-[#f8f8f8] rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="overflow-hidden h-64 md:h-80">
+                        <img src="https://readdy.ai/api/search-image?query=A%20high-quality%20photograph%20of%20a%20young%20girl%20aged%205-6%20wearing%20a%20kindergarten%20school%20uniform.%20The%20uniform%20consists%20of%20a%20white%20short-sleeved%20blouse%2C%20maroon%20pinafore%20dress%2C%20white%20socks%2C%20and%20black%20shoes.%20The%20girl%20is%20standing%20straight%2C%20facing%20the%20camera%20with%20a%20neutral%20background.%20The%20image%20is%20well-lit%2C%20clear%2C%20and%20professional%2C%20showing%20the%20complete%20uniform%20from%20head%20to%20toe.&width=600&height=800&seq=2&orientation=portrait" alt="Kindergarten Girls Uniform" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Girls Daily Uniform</h3>
+                        <p class="text-gray-700 mb-4">Our kindergarten girls wear a white short-sleeved blouse with a maroon pinafore dress. This charming uniform is both practical and comfortable for active young learners.</p>
+                        <div class="text-sm text-gray-600">
+                            <p class="mb-1"><span class="font-medium">Optional items:</span> Maroon cardigan, white hair accessories</p>
+                            <p class="text-xs italic mt-4">Designs may slightly vary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="primary" class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary mb-6 pb-2 border-b-2 border-primary">Primary School</h2>
+            <div class="uniform-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="uniform-card bg-[#f8f8f8] rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="overflow-hidden h-64 md:h-80">
+                        <img src="https://readdy.ai/api/search-image?query=A%20high-quality%20photograph%20of%20a%20boy%20aged%209-10%20wearing%20a%20primary%20school%20uniform.%20The%20uniform%20consists%20of%20a%20white%20long-sleeved%20shirt%2C%20maroon%20tie%2C%20dark%20blue%20trousers%2C%20black%20socks%2C%20and%20black%20shoes.%20The%20boy%20is%20standing%20straight%2C%20facing%20the%20camera%20with%20a%20neutral%20background.%20The%20image%20is%20well-lit%2C%20clear%2C%20and%20professional%2C%20showing%20the%20complete%20uniform%20from%20head%20to%20toe.&width=600&height=800&seq=3&orientation=portrait" alt="Primary School Boys Uniform" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Boys Daily Uniform</h3>
+                        <p class="text-gray-700 mb-4">Primary school boys wear a crisp white long-sleeved shirt with a maroon tie and dark blue trousers. This smart uniform helps instill a sense of pride and belonging.</p>
+                        <div class="text-sm text-gray-600">
+                            <p class="mb-1"><span class="font-medium">Optional items:</span> Dark blue V-neck sweater, school blazer for formal occasions</p>
+                            <p class="text-xs italic mt-4">Designs may slightly vary</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="uniform-card bg-[#f8f8f8] rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="overflow-hidden h-64 md:h-80">
+                        <img src="https://readdy.ai/api/search-image?query=A%20high-quality%20photograph%20of%20a%20girl%20aged%209-10%20wearing%20a%20primary%20school%20uniform.%20The%20uniform%20consists%20of%20a%20white%20long-sleeved%20blouse%2C%20maroon%20tie%2C%20dark%20blue%20pleated%20skirt%2C%20white%20socks%2C%20and%20black%20shoes.%20The%20girl%20is%20standing%20straight%2C%20facing%20the%20camera%20with%20a%20neutral%20background.%20The%20image%20is%20well-lit%2C%20clear%2C%20and%20professional%2C%20showing%20the%20complete%20uniform%20from%20head%20to%20toe.&width=600&height=800&seq=4&orientation=portrait" alt="Primary School Girls Uniform" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Girls Daily Uniform</h3>
+                        <p class="text-gray-700 mb-4">Primary school girls wear a white long-sleeved blouse with a maroon tie and dark blue pleated skirt. This elegant uniform promotes a sense of community and school identity.</p>
+                        <div class="text-sm text-gray-600">
+                            <p class="mb-1"><span class="font-medium">Optional items:</span> Dark blue cardigan, school blazer for formal occasions</p>
+                            <p class="text-xs italic mt-4">Designs may slightly vary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="middle" class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary mb-6 pb-2 border-b-2 border-primary">Middle School</h2>
+            <div class="uniform-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="uniform-card bg-[#f8f8f8] rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="overflow-hidden h-64 md:h-80">
+                        <img src="https://readdy.ai/api/search-image?query=A%20high-quality%20photograph%20of%20a%20teenage%20boy%20aged%2013-14%20wearing%20a%20middle%20school%20uniform.%20The%20uniform%20consists%20of%20a%20white%20long-sleeved%20shirt%2C%20striped%20maroon%20and%20dark%20blue%20tie%2C%20dark%20blue%20trousers%2C%20black%20socks%2C%20and%20black%20shoes.%20The%20boy%20is%20standing%20straight%2C%20facing%20the%20camera%20with%20a%20neutral%20background.%20The%20image%20is%20well-lit%2C%20clear%2C%20and%20professional%2C%20showing%20the%20complete%20uniform%20from%20head%20to%20toe.&width=600&height=800&seq=5&orientation=portrait" alt="Middle School Boys Uniform" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Boys Daily Uniform</h3>
+                        <p class="text-gray-700 mb-4">Middle school boys wear a white long-sleeved shirt with a striped maroon and dark blue tie, paired with dark blue trousers. This refined uniform reflects their growing maturity.</p>
+                        <div class="text-sm text-gray-600">
+                            <p class="mb-1"><span class="font-medium">Optional items:</span> Dark blue blazer with school crest, V-neck sweater for cooler weather</p>
+                            <p class="text-xs italic mt-4">Designs may slightly vary</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="uniform-card bg-[#f8f8f8] rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="overflow-hidden h-64 md:h-80">
+                        <img src="https://readdy.ai/api/search-image?query=A%20high-quality%20photograph%20of%20a%20teenage%20girl%20aged%2013-14%20wearing%20a%20middle%20school%20uniform.%20The%20uniform%20consists%20of%20a%20white%20long-sleeved%20blouse%2C%20striped%20maroon%20and%20dark%20blue%20tie%2C%20dark%20blue%20knee-length%20pleated%20skirt%2C%20white%20socks%2C%20and%20black%20shoes.%20The%20girl%20is%20standing%20straight%2C%20facing%20the%20camera%20with%20a%20neutral%20background.%20The%20image%20is%20well-lit%2C%20clear%2C%20and%20professional%2C%20showing%20the%20complete%20uniform%20from%20head%20to%20toe.&width=600&height=800&seq=6&orientation=portrait" alt="Middle School Girls Uniform" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Girls Daily Uniform</h3>
+                        <p class="text-gray-700 mb-4">Middle school girls wear a white long-sleeved blouse with a striped maroon and dark blue tie, complemented by a dark blue knee-length pleated skirt. This smart uniform fosters school pride.</p>
+                        <div class="text-sm text-gray-600">
+                            <p class="mb-1"><span class="font-medium">Optional items:</span> Dark blue blazer with school crest, cardigan for cooler weather</p>
+                            <p class="text-xs italic mt-4">Designs may slightly vary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="senior" class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary mb-6 pb-2 border-b-2 border-primary">Senior School</h2>
+            <div class="uniform-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="uniform-card bg-[#f8f8f8] rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="overflow-hidden h-64 md:h-80">
+                        <img src="https://readdy.ai/api/search-image?query=A%20high-quality%20photograph%20of%20a%20teenage%20boy%20aged%2016-17%20wearing%20a%20senior%20school%20uniform.%20The%20uniform%20consists%20of%20a%20white%20long-sleeved%20shirt%2C%20dark%20blue%20and%20maroon%20striped%20tie%2C%20dark%20blue%20blazer%20with%20school%20crest%2C%20dark%20blue%20trousers%2C%20black%20socks%2C%20and%20black%20shoes.%20The%20boy%20is%20standing%20straight%2C%20facing%20the%20camera%20with%20a%20neutral%20background.%20The%20image%20is%20well-lit%2C%20clear%2C%20and%20professional%2C%20showing%20the%20complete%20uniform%20from%20head%20to%20toe.&width=600&height=800&seq=7&orientation=portrait" alt="Senior School Boys Uniform" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Boys Daily Uniform</h3>
+                        <p class="text-gray-700 mb-4">Senior school boys wear a formal white long-sleeved shirt with a dark blue and maroon striped tie, dark blue blazer, and trousers. This distinguished uniform prepares them for professional settings.</p>
+                        <div class="text-sm text-gray-600">
+                            <p class="mb-1"><span class="font-medium">Optional items:</span> Dark blue V-neck sweater, prefect badge for student leaders</p>
+                            <p class="text-xs italic mt-4">Designs may slightly vary</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="uniform-card bg-[#f8f8f8] rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="overflow-hidden h-64 md:h-80">
+                        <img src="https://readdy.ai/api/search-image?query=A%20high-quality%20photograph%20of%20a%20teenage%20girl%20aged%2016-17%20wearing%20a%20senior%20school%20uniform.%20The%20uniform%20consists%20of%20a%20white%20long-sleeved%20blouse%2C%20dark%20blue%20and%20maroon%20striped%20tie%2C%20dark%20blue%20blazer%20with%20school%20crest%2C%20dark%20blue%20knee-length%20pleated%20skirt%2C%20black%20tights%2C%20and%20black%20shoes.%20The%20girl%20is%20standing%20straight%2C%20facing%20the%20camera%20with%20a%20neutral%20background.%20The%20image%20is%20well-lit%2C%20clear%2C%20and%20professional%2C%20showing%20the%20complete%20uniform%20from%20head%20to%20toe.&width=600&height=800&seq=8&orientation=portrait" alt="Senior School Girls Uniform" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Girls Daily Uniform</h3>
+                        <p class="text-gray-700 mb-4">Senior school girls wear an elegant white long-sleeved blouse with a dark blue and maroon striped tie, dark blue blazer, and knee-length pleated skirt. This polished uniform instills confidence and professionalism.</p>
+                        <div class="text-sm text-gray-600">
+                            <p class="mb-1"><span class="font-medium">Optional items:</span> Dark blue cardigan, prefect badge for student leaders</p>
+                            <p class="text-xs italic mt-4">Designs may slightly vary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex justify-center my-12">
+            <button class="flex items-center bg-secondary text-white py-3 px-6 rounded-button hover:bg-opacity-90 transition-colors duration-300 !rounded-button whitespace-nowrap">
+                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-file-download-line"></i>
+                </div>
+                Download Uniform Policy
+            </button>
+        </div>
+    </main>
+
+    <div class="bg-primary py-8 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-xl font-semibold mb-4">Uniform Inquiries</h3>
+            <p class="mb-4">For any questions regarding uniforms, please contact our uniform coordinator:</p>
+            <p class="mb-2"><span class="font-medium">Email:</span> uniforms@benhillschool.edu</p>
+            <p><span class="font-medium">Phone:</span> +44 (0)20 7123 4567</p>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="Enlarged uniform image" id="lightbox-img">
+        </div>
+    </div>
+    <script id="navigation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            function setActiveNavLink() {
+                const scrollPosition = window.scrollY;
+                
+                document.querySelectorAll('section').forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        const id = section.getAttribute('id');
+                        
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveNavLink);
+            setActiveNavLink();
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script id="lightbox-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const uniformImages = document.querySelectorAll('.uniform-card img');
+            
+            uniformImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    lightboxImg.src = this.src;
+                    lightbox.classList.add('active');
+                });
+            });
+            
+            lightbox.addEventListener('click', function() {
+                this.classList.remove('active');
+            });
+        });
+    </script>
+
+    <script id="mobile-navigation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById("mobileMenuButton");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const closeMobileMenu = document.getElementById("closeMobileMenu");
+
+            mobileMenuButton.addEventListener("click", function () {
+                mobileMenu.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+            });
+
+            closeMobileMenu.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                document.body.style.overflow = "";
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.add("hidden");
+                    document.body.style.overflow = "";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

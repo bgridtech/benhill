@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benhill English School</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#822811", secondary: "#0b1a36" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+
+      html {
+          scroll-behavior: smooth;
+      }
+
+      body {
+          font-family: 'Poppins', sans-serif;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+          font-family: 'Playfair Display', serif;
+      }
+
+      .counter-value {
+          transition: all 0.3s ease;
+      }
+
+      .quote-slider {
+          transition: opacity 0.5s ease;
+      }
+
+      .club-card:hover .club-overlay {
+          opacity: 1;
+      }
+
+      .club-overlay {
+          transition: opacity 0.3s ease;
+      }
+
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white shadow-md">
+      <div class="bg-secondary text-white py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+          <div class="flex items-center space-x-4">
+            <div class="flex items-center">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-phone-line text-sm"></i>
+              </div>
+              <span class="text-xs sm:text-sm ml-1 break-all">+44 20 1234 5678</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-mail-line text-xs sm:text-sm"></i>
+              </div>
+              <span class="text-xs sm:text-sm ml-1 break-all">info@benhillschool.org</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <a
+              href="#"
+              class="w-6 h-6 flex items-center justify-center hover:text-primary transition-colors"
+            >
+              <i class="ri-facebook-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="w-6 h-6 flex items-center justify-center hover:text-primary transition-colors"
+            >
+              <i class="ri-twitter-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="w-6 h-6 flex items-center justify-center hover:text-primary transition-colors"
+            >
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a
+              href="#"
+              class="w-6 h-6 flex items-center justify-center hover:text-primary transition-colors"
+            >
+              <i class="ri-youtube-fill"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Benhill English School</a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="text-primary font-semibold"
+            >Home</a
+          >
+          <a
+            href="/about.html"
+            class="font-medium hover:text-primary transition-colors"
+            >About</a
+          >
+          <a
+            href="#facilities"
+            class="font-medium hover:text-primary transition-colors"
+            >Facilities</a
+          >
+          <a href="/document.html" class="font-medium hover:text-primary transition-colors">Mandatory Disclosure</a>
+          <a href="/gallary.html" class="text-secondary hover:text-primary transition-colors">Gallery</a>
+
+
+          <a href="/admission.html" class="text-secondary hover:text-primary transition-colors">Admissions</a>
+
+          <a
+            href="/contact.html"
+            class="font-medium hover:text-primary transition-colors"
+            >Contact</a
+          >
+          <a href="/uniform.html" class="text-secondary hover:text-primary transition-colors">Uniform</a>
+        </nav>
+        <!-- Hamburger icon for mobile -->
+        <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobileMenuButton" aria-label="Open menu">
+          <i class="ri-menu-line text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 hidden">
+      <div class="absolute right-0 top-0 w-72 max-w-full h-full bg-white shadow-lg flex flex-col">
+        <div class="flex justify-between items-center px-6 py-4 border-b">
+          <span class="text-xl font-bold text-primary">Menu</span>
+          <button id="closeMobileMenu" class="text-2xl text-secondary" aria-label="Close menu">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-4 px-6 py-6">
+          <a href="#" class="text-secondary font-semibold">Home</a>
+          <a href="/about.html" class="text-secondary">About</a>
+          <a href="#facilities" class="text-secondary">Facilities</a>
+          <a href="/document.html" class="text-secondary">Mandatory Disclosure</a>
+          <a href="/gallary.html" class="text-secondary">Gallery</a>
+          <a href="/admission.html" class="text-secondary">Admissions</a>
+          <a href="/contact.html" class="text-secondary">Contact</a>
+          <a href="/uniform.html" class="text-secondary">Uniform</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen flex items-center"
+      style="background-image: url('https://www.benhillschool.org/images/benhill-english-school-slider-1.jpg'); background-size: cover; background-position: center;"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-secondary/70 to-secondary/40"
+      ></div>
+      <div class="container mx-auto px-4 relative z-10 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+          BENHILL ENGLISH SCHOOL
+        </h1>
+        <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+          Preparing Students For Success In A Changing World
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="admission.html"
+            class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 !rounded-button whitespace-nowrap transition-colors"
+            >Apply Now</a
+          >
+          <button
+            id="videoBtn"
+            class="bg-white hover:bg-gray-100 text-secondary font-medium py-3 px-8 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 transition-colors"
+          >
+            <div class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-play-circle-line"></i>
+            </div>
+            Watch Admission Video
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-6">
+              Welcome to Benhill English School
+            </h2>
+            <div class="w-20 h-1 bg-primary mb-6"></div>
+            <p class="mb-6">
+              Established in 1998, Benhill English School has been a beacon of
+              educational excellence for over 25 years. Our institution is
+              committed to providing a holistic education that nurtures both
+              academic prowess and character development.
+            </p>
+            <p class="mb-6">
+              At Benhill, we believe in creating an environment where students
+              can discover their potential and develop the skills necessary to
+              thrive in an ever-evolving global landscape. Our dedicated faculty
+              employs innovative teaching methodologies that inspire curiosity
+              and foster critical thinking.
+            </p>
+            <p>
+              We take pride in our tradition of academic excellence, cultural
+              diversity, and our commitment to instilling values that prepare
+              students not just for examinations, but for life's challenges.
+            </p>
+          </div>
+          <div class="md:w-1/2 bg-white p-8 shadow-lg rounded">
+            <h3 class="text-2xl font-bold text-primary mb-4">
+              School Affiliation
+            </h3>
+            <p class="mb-4">
+              Benhill English School is proud to be affiliated with the National
+              Education Board under affiliation number 930593.
+            </p>
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-government-line"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Official Recognition</h4>
+                <p class="text-sm text-gray-600">
+                  Nationally accredited curriculum
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-book-open-line"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Quality Education</h4>
+                <p class="text-sm text-gray-600">
+                  Following national standards
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-primary"
+                >
+                  <i class="ri-graduation-cap-line"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-semibold">Certified Excellence</h4>
+                <p class="text-sm text-gray-600">
+                  Recognized for academic achievements
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">
+            Our Achievements
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            We take pride in our accomplishments and the positive impact we've
+            made in education over the years.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-white p-6 rounded shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-calendar-check-line"></i>
+              </div>
+            </div>
+            <h3 class="text-4xl font-bold text-primary mb-2">
+              <span class="counter-value" data-count="25">0</span>+
+            </h3>
+            <p class="text-gray-600">Successful Years</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-user-star-line"></i>
+              </div>
+            </div>
+            <h3 class="text-4xl font-bold text-primary mb-2">
+              <span class="counter-value" data-count="75">0</span>
+            </h3>
+            <p class="text-gray-600">Experienced Faculty</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-user-follow-line"></i>
+              </div>
+            </div>
+            <h3 class="text-4xl font-bold text-primary mb-2">
+              <span class="counter-value" data-count="1250">0</span>
+            </h3>
+            <p class="text-gray-600">Enrolled Students</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-award-line"></i>
+              </div>
+            </div>
+            <h3 class="text-4xl font-bold text-primary mb-2">
+              <span class="counter-value" data-count="100">0</span>%
+            </h3>
+            <p class="text-gray-600">Success Rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Slider -->
+    <section class="py-20 bg-secondary text-white relative">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div
+            class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <div class="w-6 h-6 flex items-center justify-center text-white">
+              <i class="ri-double-quotes-l"></i>
+            </div>
+          </div>
+          <div class="quote-slider relative">
+            <div class="quote-slide">
+              <p class="text-xl md:text-2xl italic mb-6">
+                "Education is not the filling of a pail, but the lighting of a
+                fire. At Benhill, we ignite the passion for learning in every
+                student."
+              </p>
+              <p class="font-semibold">Dr. Elizabeth Harrington</p>
+              <p class="text-sm text-gray-300">School Principal</p>
+            </div>
+            <div class="quote-slide hidden">
+              <p class="text-xl md:text-2xl italic mb-6">
+                "The beautiful thing about learning is that no one can take it
+                away from you. We empower our students with knowledge that lasts
+                a lifetime."
+              </p>
+              <p class="font-semibold">Prof. Jonathan Miller</p>
+              <p class="text-sm text-gray-300">Head of Academics</p>
+            </div>
+            <div class="quote-slide hidden">
+              <p class="text-xl md:text-2xl italic mb-6">
+                "Success is not final, failure is not fatal: it is the courage
+                to continue that counts. We teach our students to persevere
+                through challenges."
+              </p>
+              <p class="font-semibold">Mrs. Sarah Thompson</p>
+              <p class="text-sm text-gray-300">Senior Educator</p>
+            </div>
+          </div>
+          <div class="flex justify-center space-x-2 mt-8">
+            <button
+              class="w-3 h-3 rounded-full bg-white quote-dot active"
+              data-index="0"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-white/50 quote-dot"
+              data-index="1"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-white/50 quote-dot"
+              data-index="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlight Cards -->
+    <section id="academics" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">
+            Academic Excellence
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Our comprehensive approach to education ensures students receive the
+            best possible preparation for their future.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-graduation-cap-line"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-4">
+              Academic Success
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Our school boasts a 100% success rate in national examinations,
+              with students consistently achieving top grades and gaining
+              admission to prestigious universities.
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Comprehensive curriculum</span>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Regular assessments</span>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Personalized learning plans</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-white p-8 rounded shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-team-line"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-4">
+              Expert Faculty
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Our teachers are highly qualified professionals with extensive
+              experience in their respective fields, dedicated to nurturing each
+              student's potential.
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Advanced degrees</span>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Ongoing professional development</span>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Innovative teaching methods</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-white p-8 rounded shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-microscope-line"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-4">
+              Modern Facilities
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Our school is equipped with state-of-the-art laboratories,
+              libraries, and digital learning tools to enhance the educational
+              experience.
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Science and computer labs</span>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Digital classrooms</span>
+              </li>
+              <li class="flex items-start">
+                <div
+                  class="w-5 h-5 flex items-center justify-center text-primary mt-0.5"
+                >
+                  <i class="ri-check-line"></i>
+                </div>
+                <span class="ml-2">Well-stocked library</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">
+            News & Events
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Stay updated with the latest happenings and upcoming events at
+            Benhill English School.
+          </p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-1/2">
+            <div class="bg-white rounded shadow-md overflow-hidden">
+              <div class="h-64 overflow-hidden">
+                <img
+                  src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrWZxsNM8U1Oy6Ezf01QZz8gexjKLohXYvBCWU-prSuINKCL8Q6Su0VlR_jU-eGNU_eoM_clnB5Ur-Ueqry0jzHq-8P6Z931FBgliPiR0UC7GCZWMxlBXJ_3flWtLm0J90yHHliTw=s680-w680-h510-rw"
+                  alt="Admission Open"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <div
+                  class="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded mb-4"
+                >
+                  Featured News
+                </div>
+                <h3 class="text-2xl font-bold text-secondary mb-3">
+                  Admission Open for 2025–26 Academic Year
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  We are pleased to announce that admissions for the 2025-26
+                  academic year are now open. We invite parents to visit our
+                  campus and learn more about our educational philosophy and
+                  facilities.
+                </p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">June 3, 2025</span>
+                  <a
+                    href="admission.html"
+                    class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 !rounded-button whitespace-nowrap transition-colors"
+                    >Apply Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <h3 class="text-2xl font-bold text-secondary mb-6">
+              Upcoming Events
+            </h3>
+            <div class="space-y-6">
+              <div
+                class="flex gap-4 bg-white p-4 rounded shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="min-w-16 text-center">
+                  <div
+                    class="bg-secondary text-white text-sm font-medium p-1 rounded-t"
+                  >
+                    JUN
+                  </div>
+                  <div
+                    class="bg-gray-100 text-secondary font-bold text-xl p-2 rounded-b"
+                  >
+                    15
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold text-secondary">School Reopening</h4>
+                  <p class="text-gray-600 text-sm">
+                    The school reopens for the new academic year. All students
+                    are required to be in proper uniform.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 bg-white p-4 rounded shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="min-w-16 text-center">
+                  <div
+                    class="bg-secondary text-white text-sm font-medium p-1 rounded-t"
+                  >
+                    JUL
+                  </div>
+                  <div
+                    class="bg-gray-100 text-secondary font-bold text-xl p-2 rounded-b"
+                  >
+                    02
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold text-secondary">Annual Results Day</h4>
+                  <p class="text-gray-600 text-sm">
+                    Annual examination results will be published. Parents are
+                    invited to meet with teachers.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 bg-white p-4 rounded shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="min-w-16 text-center">
+                  <div
+                    class="bg-secondary text-white text-sm font-medium p-1 rounded-t"
+                  >
+                    JUL
+                  </div>
+                  <div
+                    class="bg-gray-100 text-secondary font-bold text-xl p-2 rounded-b"
+                  >
+                    16
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold text-secondary">
+                    Victory Day Celebration
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    Special assembly and cultural program to commemorate Victory
+                    Day.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 bg-white p-4 rounded shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="min-w-16 text-center">
+                  <div
+                    class="bg-secondary text-white text-sm font-medium p-1 rounded-t"
+                  >
+                    AUG
+                  </div>
+                  <div
+                    class="bg-gray-100 text-secondary font-bold text-xl p-2 rounded-b"
+                  >
+                    05
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold text-secondary">Club Inaugurations</h4>
+                  <p class="text-gray-600 text-sm">
+                    Official inauguration of all school clubs for the new
+                    academic year.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section id="clubs" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">
+            Student Clubs
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Our diverse range of clubs provides students with opportunities to
+            explore their interests and develop new skills.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="club-card relative rounded overflow-hidden h-64 shadow-md group"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=students%20exploring%20nature%2C%20taking%20samples%20from%20plants%2C%20outdoor%20education%2C%20bright%20sunny%20day%2C%20professional%20education%20photography&width=400&height=300&seq=2&orientation=landscape"
+              alt="Nature Club"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="club-overlay absolute inset-0 bg-secondary/80 opacity-0 flex flex-col justify-center items-center p-6 text-white"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-white"
+                >
+                  <i class="ri-plant-line"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Nature Club</h3>
+              <p class="text-center text-sm">
+                Explore the natural world through field trips, conservation
+                projects, and environmental awareness activities.
+              </p>
+            </div>
+          </div>
+          <div
+            class="club-card relative rounded overflow-hidden h-64 shadow-md group"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=students%20in%20science%20lab%20with%20microscopes%20and%20test%20tubes%2C%20conducting%20experiments%2C%20professional%20education%20photography&width=400&height=300&seq=3&orientation=landscape"
+              alt="Science Club"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="club-overlay absolute inset-0 bg-secondary/80 opacity-0 flex flex-col justify-center items-center p-6 text-white"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-white"
+                >
+                  <i class="ri-flask-line"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Science Club</h3>
+              <p class="text-center text-sm">
+                Engage in experiments, research projects, and scientific
+                competitions to foster analytical thinking.
+              </p>
+            </div>
+          </div>
+          <div
+            class="club-card relative rounded overflow-hidden h-64 shadow-md group"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=students%20performing%20dance%20in%20colorful%20costumes%2C%20school%20dance%20performance%2C%20professional%20education%20photography&width=400&height=300&seq=4&orientation=landscape"
+              alt="Dance Club"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="club-overlay absolute inset-0 bg-secondary/80 opacity-0 flex flex-col justify-center items-center p-6 text-white"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-white"
+                >
+                  <i class="ri-footprint-line"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Dance Club</h3>
+              <p class="text-center text-sm">
+                Learn various dance forms, participate in performances, and
+                develop rhythm, coordination, and self-expression.
+              </p>
+            </div>
+          </div>
+          <div
+            class="club-card relative rounded overflow-hidden h-64 shadow-md group"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=students%20playing%20musical%20instruments%20in%20a%20school%20band%2C%20professional%20education%20photography&width=400&height=300&seq=5&orientation=landscape"
+              alt="Music Club"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="club-overlay absolute inset-0 bg-secondary/80 opacity-0 flex flex-col justify-center items-center p-6 text-white"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-white"
+                >
+                  <i class="ri-music-2-line"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Music Club</h3>
+              <p class="text-center text-sm">
+                Develop musical talents through vocal and instrumental training,
+                performances, and music appreciation.
+              </p>
+            </div>
+          </div>
+          <div
+            class="club-card relative rounded overflow-hidden h-64 shadow-md group"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=students%20solving%20mathematical%20problems%20on%20whiteboard%2C%20math%20competition%2C%20professional%20education%20photography&width=400&height=300&seq=6&orientation=landscape"
+              alt="Maths Club"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="club-overlay absolute inset-0 bg-secondary/80 opacity-0 flex flex-col justify-center items-center p-6 text-white"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-white"
+                >
+                  <i class="ri-calculator-line"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Maths Club</h3>
+              <p class="text-center text-sm">
+                Enhance mathematical skills through puzzles, competitions, and
+                exploration of advanced mathematical concepts.
+              </p>
+            </div>
+          </div>
+          <div
+            class="club-card relative rounded overflow-hidden h-64 shadow-md group"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=students%20working%20on%20computers%20in%20IT%20lab%2C%20coding%20class%2C%20professional%20education%20photography&width=400&height=300&seq=7&orientation=landscape"
+              alt="IT Club"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="club-overlay absolute inset-0 bg-secondary/80 opacity-0 flex flex-col justify-center items-center p-6 text-white"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-white"
+                >
+                  <i class="ri-code-s-slash-line"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2">IT Club</h3>
+              <p class="text-center text-sm">
+                Learn programming, web development, and digital skills through
+                hands-on projects and workshops.
+              </p>
+            </div>
+          </div>
+          <div
+            class="club-card relative rounded overflow-hidden h-64 shadow-md group"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=students%20playing%20sports%20on%20school%20field%2C%20physical%20education%20class%2C%20professional%20education%20photography&width=400&height=300&seq=8&orientation=landscape"
+              alt="Health & PE Club"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="club-overlay absolute inset-0 bg-secondary/80 opacity-0 flex flex-col justify-center items-center p-6 text-white"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-white"
+                >
+                  <i class="ri-heart-pulse-line"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Health & PE Club</h3>
+              <p class="text-center text-sm">
+                Promote physical fitness, sports skills, and healthy lifestyle
+                choices through various activities.
+              </p>
+            </div>
+          </div>
+          <div
+            class="club-card relative rounded overflow-hidden h-64 shadow-md group"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=students%20in%20art%20class%20painting%20on%20canvas%2C%20creative%20arts%20education%2C%20professional%20education%20photography&width=400&height=300&seq=9&orientation=landscape"
+              alt="Arts Club"
+              class="w-full h-full object-cover object-top"
+            />
+            <div
+              class="club-overlay absolute inset-0 bg-secondary/80 opacity-0 flex flex-col justify-center items-center p-6 text-white"
+            >
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4"
+              >
+                <div
+                  class="w-6 h-6 flex items-center justify-center text-white"
+                >
+                  <i class="ri-palette-line"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Arts Club</h3>
+              <p class="text-center text-sm">
+                Express creativity through painting, drawing, crafts, and other
+                visual arts in a supportive environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">
+            Our Facilities
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            We provide state-of-the-art facilities to ensure a conducive
+            learning environment for our students.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-microscope-line"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">Modern Labs</h3>
+            <p class="text-gray-600">
+              Fully equipped science, computer, and language laboratories with
+              the latest technology and resources.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-book-open-line"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">
+              Library & Resource Center
+            </h3>
+            <p class="text-gray-600">
+              Extensive collection of books, journals, and digital resources to
+              support research and learning.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-basketball-line"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">
+              Sports Facilities
+            </h3>
+            <p class="text-gray-600">
+              Comprehensive sports infrastructure including playing fields,
+              indoor courts, and fitness equipment.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded shadow-md hover:shadow-lg transition-shadow text-center"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center text-primary"
+              >
+                <i class="ri-bus-line"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-secondary mb-3">
+              Transportation
+            </h3>
+            <p class="text-gray-600">
+              Safe and reliable transportation service covering all major areas
+              of the city.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-secondary text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Join Our Educational Community
+        </h2>
+        <p class="max-w-2xl mx-auto mb-8 text-lg">
+          Take the first step towards providing your child with a quality
+          education that prepares them for future success.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="admission.html"
+            class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 !rounded-button whitespace-nowrap transition-colors"
+            >Apply for Admission</a
+          >
+          <a
+            href="#contact"
+            class="bg-white hover:bg-gray-100 text-secondary font-medium py-3 px-8 !rounded-button whitespace-nowrap transition-colors"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Benhill English School</h3>
+            <p class="mb-4">
+              Affiliated with the National Education Board (930593)
+            </p>
+            <div class="flex items-center mb-4">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <span class="ml-2">123 Education Avenue, London, UK</span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-phone-line"></i>
+              </div>
+              <span class="ml-2">+44 20 1234 5678</span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-mail-line"></i>
+              </div>
+              <span class="ml-2">info@benhillschool.org</span>
+            </div>
+            <div class="flex space-x-4 mt-6">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-facebook-fill"></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-twitter-fill"></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-instagram-line"></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-youtube-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="hover:text-primary transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-primary transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#academics"
+                  class="hover:text-primary transition-colors"
+                  >Academics</a
+                >
+              </li>
+              <li>
+                <a href="#clubs" class="hover:text-primary transition-colors"
+                  >Student Clubs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#facilities"
+                  class="hover:text-primary transition-colors"
+                  >Facilities</a
+                >
+              </li>
+              <li>
+                <a
+                  href="admission.html"
+                  class="hover:text-primary transition-colors"
+                  >Admissions</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-primary transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-6">Newsletter</h3>
+            <p class="mb-4">
+              Subscribe to our newsletter to receive updates about school events
+              and activities.
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="bg-gray-800 text-white px-4 py-2 w-full border-none focus:outline-none focus:ring-2 focus:ring-primary rounded-l"
+                />
+                <button
+                  type="submit"
+                  class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-r-button whitespace-nowrap transition-colors"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <p class="text-sm text-gray-400">
+              By subscribing, you agree to our Privacy Policy and consent to
+              receive updates from our school.
+            </p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400"
+        >
+          <p>&copy; 2025 Benhill English School. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div
+      id="videoModal"
+      class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4"
+    >
+      <div class="relative bg-white rounded-lg w-full max-w-3xl">
+        <div class="p-4 border-b flex justify-between items-center">
+          <h3 class="text-lg font-bold text-secondary">Admission Video</h3>
+          <button
+            id="closeVideoModal"
+            class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700"
+          >
+            <i class="ri-close-line text-xl"></i>
+          </button>
+        </div>
+        <div class="p-4">
+          <div class="aspect-video bg-gray-100">
+            <iframe
+              id="videoFrame"
+              class="w-full h-full"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Scripts -->
+    <script id="navigation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            header.classList.add("shadow-md");
+          } else {
+            header.classList.remove("shadow-md");
+          }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById("mobileMenuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const closeMobileMenu = document.getElementById("closeMobileMenu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        });
+
+        closeMobileMenu.addEventListener("click", function () {
+          mobileMenu.classList.add("hidden");
+          document.body.style.overflow = "";
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+            document.body.style.overflow = "";
+          });
+        });
+      });
+    </script>
+
+    <script id="counter-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter-value");
+        const speed = 200;
+
+        const startCounters = () => {
+          counters.forEach((counter) => {
+            const target = parseInt(counter.getAttribute("data-count"));
+            const count = 0;
+            const increment = target / speed;
+
+            const updateCount = () => {
+              const currentValue = parseInt(counter.innerText);
+              if (currentValue < target) {
+                counter.innerText = Math.ceil(currentValue + increment);
+                setTimeout(updateCount, 1);
+              } else {
+                counter.innerText = target;
+              }
+            };
+
+            updateCount();
+          });
+        };
+
+        // Use Intersection Observer to trigger counter animation when in view
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                startCounters();
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+
+        // Observe the section containing counters
+        const statsSection = document
+          .querySelector(".counter-value")
+          .closest("section");
+        observer.observe(statsSection);
+      });
+    </script>
+
+    <script id="quote-slider-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".quote-slide");
+        const dots = document.querySelectorAll(".quote-dot");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+          slides.forEach((slide) => slide.classList.add("hidden"));
+          dots.forEach((dot) => dot.classList.remove("active", "bg-white"));
+          dots.forEach((dot) => dot.classList.add("bg-white/50"));
+
+          slides[index].classList.remove("hidden");
+          dots[index].classList.add("active", "bg-white");
+          dots[index].classList.remove("bg-white/50");
+
+          currentSlide = index;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        }
+
+        // Set up dot click handlers
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => showSlide(index));
+        });
+
+        // Auto rotate slides
+        setInterval(nextSlide, 5000);
+      });
+    </script>
+
+    <script id="video-modal-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const videoBtn = document.getElementById("videoBtn");
+        const videoModal = document.getElementById("videoModal");
+        const closeVideoModal = document.getElementById("closeVideoModal");
+        const videoFrame = document.getElementById("videoFrame");
+
+        videoBtn.addEventListener("click", function () {
+          videoFrame.src = "https://www.youtube.com/embed/E70F79g4UQA";
+          videoModal.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        });
+
+        closeVideoModal.addEventListener("click", function () {
+          videoModal.classList.add("hidden");
+          videoFrame.src = "";
+          document.body.style.overflow = "";
+        });
+
+        // Close modal when clicking outside content
+        videoModal.addEventListener("click", function (e) {
+          if (e.target === videoModal) {
+            videoModal.classList.add("hidden");
+            videoFrame.src = "";
+            document.body.style.overflow = "";
+          }
+        });
+      });
+    </script>
+
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            if (this.getAttribute("href") !== "#") {
+              e.preventDefault();
+
+              const targetId = this.getAttribute("href");
+              const targetElement = document.querySelector(targetId);
+
+              if (targetElement) {
+                const headerHeight = document.querySelector("header").offsetHeight;
+                const targetPosition =
+                  targetElement.getBoundingClientRect().top +
+                  window.pageYOffset -
+                  headerHeight;
+
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

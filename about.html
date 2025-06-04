@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Benhill English School</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#822811',secondary:'#0b1a36'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(11, 26, 54, 0.6), rgba(11, 26, 54, 0.6)), url('https://www.benhillschool.org/images/gallery/school-days/behill-school-days-1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        .nav-link.active {
+            color: #822811;
+            border-bottom: 2px solid #822811;
+        }
+        .principal-image {
+            transition: transform 0.5s ease;
+        }
+        .principal-image:hover {
+            transform: scale(1.03);
+        }
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Benhill English School</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+                <a href="/about.html" class="text-primary font-medium">About Us</a>
+                <a href="/index.html#facilities" class="text-secondary hover:text-primary transition-colors">Facilities</a>
+                <a href="/document.html" class="text-secondary hover:text-primary transition-colors">Mandatory Disclosure</a>
+                <a href="/gallary.html" class="text-secondary hover:text-primary transition-colors">Gallery</a>
+                <a href="/admission.html" class="text-secondary hover:text-primary transition-colors">Admissions</a>
+                <a href="/contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a>
+                <a href="/uniform.html" class="text-secondary hover:text-primary transition-colors">Uniform</a>
+            </nav>
+            <!-- Hamburger icon for mobile -->
+            <button class="md:hidden flex items-center justify-center w-10 h-10" id="mobileMenuButton" aria-label="Open menu">
+                <i class="ri-menu-line text-secondary text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 hidden">
+        <div class="absolute right-0 top-0 w-72 max-w-full h-full bg-white shadow-lg flex flex-col">
+            <div class="flex justify-between items-center px-6 py-4 border-b">
+                <span class="text-xl font-bold text-primary">Menu</span>
+                <button id="closeMobileMenu" class="text-2xl text-secondary" aria-label="Close menu">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4 px-6 py-6">
+                <a href="/index.html" class="text-secondary font-semibold">Home</a>
+                <a href="/about.html" class="text-primary font-medium">About Us</a>
+                <a href="/index.html#facilities" class="text-secondary">Facilities</a>
+                <a href="/document.html" class="text-secondary">Mandatory Disclosure</a>
+                <a href="/gallary.html" class="text-secondary">Gallery</a>
+                <a href="/admission.html" class="text-secondary">Admissions</a>
+                <a href="/contact.html" class="text-secondary">Contact</a>
+                <a href="/uniform.html" class="text-secondary">Uniform</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center mt-16">
+        <div class="text-center text-white px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Benhill English School</h1>
+            <p class="text-xl md:text-2xl font-light">Nurturing Excellence with Values Since 2001</p>
+        </div>
+    </section>
+
+    <!-- Secondary Navigation -->
+    <div class="sticky top-16 bg-white shadow-sm z-40">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-center overflow-x-auto py-4 no-scrollbar">
+                <ul class="flex space-x-8 md:space-x-12">
+                    <li><a href="#principal-message" class="nav-link text-secondary hover:text-primary py-2 px-1 transition-colors">Principal's Message</a></li>
+                    <li><a href="#affiliations" class="nav-link text-secondary hover:text-primary py-2 px-1 transition-colors">Affiliations</a></li>
+                    <li><a href="#motto" class="nav-link text-secondary hover:text-primary py-2 px-1 transition-colors">Motto</a></li>
+                    <li><a href="#vision" class="nav-link text-secondary hover:text-primary py-2 px-1 transition-colors">Vision</a></li>
+                    <li><a href="#heritage" class="nav-link text-secondary hover:text-primary py-2 px-1 transition-colors">Heritage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Principal's Message -->
+    <section id="principal-message" class="py-16 md:py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">Principal's Message</h2>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://www.benhillschool.org/images/Benhill-school-principal.jpg" alt="School Principal" class="w-full h-auto principal-image">
+                </div>
+                <div class="section-fade">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">Dear Parents and Students,</h3>
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p>It is with great pleasure that I welcome you to Benhill English School, an institution dedicated to academic excellence and character development since 2001.</p>
+                        
+                        <p>At Benhill, we believe that education extends far beyond textbooks and examinations. Our mission is to nurture well-rounded individuals who not only excel academically but also embody strong moral values and social responsibility. We strive to create an environment where students can discover their unique talents, develop critical thinking skills, and cultivate a lifelong love for learning.</p>
+                        
+                        <p>Our dedicated faculty members are committed to providing personalized attention to each student, recognizing their individual strengths and areas for growth. We employ innovative teaching methodologies that make learning engaging and relevant to real-world applications.</p>
+                        
+                        <p>The Benedictine heritage that inspires our educational philosophy emphasizes the importance of community, discipline, and spiritual growth. These principles guide our approach to education, ensuring that our students graduate not just with knowledge, but with wisdom.</p>
+                        
+                        <p>I invite you to explore our school and experience the warm, nurturing environment that makes Benhill English School a truly special place for learning and growth.</p>
+                        
+                        <p class="font-medium">Warm regards,<br>Dr. Elizabeth Mathews<br>Principal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliations & Accreditations -->
+    <section id="affiliations" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">Affiliations & Accreditations</h2>
+            <div class="max-w-3xl mx-auto section-fade">
+                <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <i class="ri-award-fill text-primary text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Central Board of Secondary Education (CBSE)</h3>
+                    <p class="text-gray-600 mb-4">Benhill English School is proud to be affiliated with the Central Board of Secondary Education (CBSE), one of India's most prestigious educational boards.</p>
+                    <div class="inline-block bg-gray-100 px-4 py-2 rounded-full text-primary font-medium">
+                        Affiliation Number: 930593
+                    </div>
+                    <p class="mt-6 text-gray-700">Our CBSE affiliation ensures that our curriculum meets national standards of excellence and provides our students with a strong foundation for higher education and future careers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motto Section -->
+    <section id="motto" class="py-16 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center section-fade">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-secondary">Our Motto</h2>
+                <div class="mb-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-primary italic">"LET YOUR LIGHT SHINE ON US"</h3>
+                </div>
+                <div class="prose prose-lg max-w-3xl mx-auto text-gray-700">
+                    <p>Our motto embodies the essence of what we strive to achieve at Benhill English School. It represents our commitment to illuminating the path of knowledge and wisdom for our students, guiding them towards a bright and promising future.</p>
+                    <p>This guiding principle inspires us to nurture the unique potential within each student, encouraging them to discover their inner light and share it with the world. Just as light dispels darkness, education dispels ignorance, opening doors to new possibilities and perspectives.</p>
+                    <p>At Benhill, we believe that every student carries a special light within them – talents, dreams, and aspirations waiting to be kindled. Our role as educators is to help that light shine brightly, illuminating not only their own path but also brightening the lives of those around them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">Our Vision</h2>
+            <div class="grid md:grid-cols-3 gap-8 section-fade">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-book-open-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary">Academic Excellence</h3>
+                    <p class="text-gray-700">We are committed to providing a rigorous academic program that challenges students to reach their highest potential. Our curriculum is designed to foster critical thinking, creativity, and intellectual curiosity.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-heart-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary">Character Development</h3>
+                    <p class="text-gray-700">We believe in nurturing not just intelligent minds but also compassionate hearts. Our focus on character development instills values such as integrity, respect, responsibility, and empathy.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-global-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary">Global Citizenship</h3>
+                    <p class="text-gray-700">We prepare our students to be responsible global citizens who understand and appreciate cultural diversity, environmental sustainability, and social justice.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-palette-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary">Holistic Development</h3>
+                    <p class="text-gray-700">We recognize that education extends beyond academics. Our comprehensive approach includes arts, sports, community service, and leadership opportunities to develop well-rounded individuals.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-team-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary">Supportive Community</h3>
+                    <p class="text-gray-700">We foster a nurturing environment where students feel safe, valued, and supported. Our close-knit community encourages collaboration, mutual respect, and a sense of belonging.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-lightbulb-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-secondary">Innovative Learning</h3>
+                    <p class="text-gray-700">We embrace innovative teaching methodologies and technologies that enhance the learning experience and prepare students for the challenges of the 21st century.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section id="heritage" class="py-16 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto section-fade">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">The Heritage of Benedictines</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="prose prose-lg max-w-none text-gray-700">
+                        <p>Benhill English School draws inspiration from the rich educational tradition of the Benedictine Order, which has been at the forefront of learning and scholarship for over 1,500 years. Founded on the principles established by Saint Benedict of Nursia in the 6th century, Benedictine education emphasizes the harmonious development of mind, body, and spirit.</p>
+                        
+                        <h3 class="text-xl font-semibold mt-6 mb-3 text-primary">Core Benedictine Values</h3>
+                        
+                        <ul class="space-y-3">
+                            <li><span class="font-medium text-secondary">Balance:</span> We promote a balanced approach to education, recognizing the importance of academic pursuits alongside physical well-being, creative expression, and spiritual growth.</li>
+                            
+                            <li><span class="font-medium text-secondary">Community:</span> We foster a strong sense of community where every individual is valued and respected. Our students learn the importance of collaboration, mutual support, and shared responsibility.</li>
+                            
+                            <li><span class="font-medium text-secondary">Stability:</span> We provide a stable and consistent educational environment that gives students the security they need to explore, take risks, and grow.</li>
+                            
+                            <li><span class="font-medium text-secondary">Stewardship:</span> We teach our students to be responsible stewards of their talents, resources, and the environment, encouraging them to use their gifts in service to others.</li>
+                            
+                            <li><span class="font-medium text-secondary">Hospitality:</span> We welcome diversity and embrace inclusivity, creating an environment where different perspectives and backgrounds are celebrated.</li>
+                        </ul>
+                        
+                        <p class="mt-6">While Benhill English School is not directly affiliated with the Benedictine Order, our educational philosophy is deeply influenced by these timeless values. We believe that by incorporating these principles into our approach, we provide our students with not just an education, but a foundation for a meaningful and purposeful life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 md:py-20 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Join the Benhill Family</h2>
+            <p class="text-white text-lg mb-8 max-w-2xl mx-auto">Experience the difference of an education that nurtures both academic excellence and character development.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-white text-primary font-medium py-3 px-6 rounded-button hover:bg-gray-100 transition-colors whitespace-nowrap">Schedule a Visit</a>
+                <a href="#" class="bg-secondary text-white font-medium py-3 px-6 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-secondary">Stay Updated</h2>
+                <p class="text-gray-700 mb-8">Subscribe to our newsletter to receive updates about school events, achievements, and important announcements.</p>
+                <form class="flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-button border border-gray-300 focus:border-primary">
+                    <button type="submit" class="bg-primary text-white font-medium py-3 px-6 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Benhill English School</h3>
+                    <p class="mb-4">Nurturing Excellence with Values Since 2001</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
+                            <i class="ri-twitter-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
+                            <i class="ri-instagram-line text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
+                            <i class="ri-youtube-fill text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mt-1 mr-3"></i>
+                            <span>123 Education Lane, Benhill District, Karnataka 560001, India</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-phone-line mr-3"></i>
+                            <span>+91 80 2345 6789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-mail-line mr-3"></i>
+                            <span>info@benhillschool.org</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Academics</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Admissions</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">School Hours</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday:</span>
+                            <span>8:00 AM - 3:30 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday:</span>
+                            <span>8:00 AM - 12:30 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday:</span>
+                            <span>Closed</span>
+                        </li>
+                        <li class="mt-4">
+                            <span class="block">Office Hours:</span>
+                            <span>9:00 AM - 4:00 PM (Weekdays)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2025 Benhill English School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="navigation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hamburger menu logic
+            const mobileMenuButton = document.getElementById("mobileMenuButton");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const closeMobileMenu = document.getElementById("closeMobileMenu");
+
+            mobileMenuButton.addEventListener("click", function () {
+                mobileMenu.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+            });
+
+            closeMobileMenu.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                document.body.style.overflow = "";
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.add("hidden");
+                    document.body.style.overflow = "";
+                });
+            });
+
+            // Existing nav highlight and smooth scroll
+            const navLinks = document.querySelectorAll('.nav-link');
+            function setActiveNavLink() {
+                const scrollPosition = window.scrollY;
+                document.querySelectorAll('section[id]').forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            window.addEventListener('scroll', setActiveNavLink);
+            setActiveNavLink();
+        });
+    </script>
+
+    <script id="section-animation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const sectionFades = document.querySelectorAll('.section-fade');
+            
+            function checkVisibility() {
+                sectionFades.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight * 0.85) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+        });
+    </script>
+</body>
+</html>
