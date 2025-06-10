@@ -27,4 +27,6 @@ def get_db_connection():
         print(f"Database connection error: {e}")
         return None
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5002)
 
