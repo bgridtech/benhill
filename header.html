@@ -1,0 +1,243 @@
+<header class="fixed w-full z-50 bg-white shadow-md">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-primary">Benhill English School</a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="/" class="text-secondary hover:text-primary transition-colors">Home</a>
+      <div class="relative" id="aboutDesktopDropdownWrapper">
+        <button id="aboutDesktopBtn" class="text-secondary hover:text-primary transition-colors flex items-center focus:outline-none">
+          About
+          <i class="ri-arrow-down-s-line ml-2"></i>
+        </button>
+        <div id="aboutDesktopDropdown" class="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-lg py-2 z-50 hidden">
+          <a href="/about" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">About Us</a>
+          <a href="/faculty" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Faculties</a>
+          <a href="/#facilities" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Facilities</a>
+        </div>
+      </div>
+
+      <a href="/document" class="text-secondary hover:text-primary transition-colors">Mandatory Disclosure</a>
+      <a href="/gallary" class="text-secondary hover:text-primary transition-colors">Gallery</a>
+      <a href="/admission" class="text-secondary hover:text-primary transition-colors">Admissions</a>
+      <a href="/news" class="text-secondary hover:text-primary transition-colors">News</a>
+      <a href="/contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+      <div class="relative" id="uniformDropdownWrapper">
+        <button id="uniformDropdownBtn" class="text-secondary hover:text-primary transition-colors flex items-center focus:outline-none">
+          Uniforms
+          <i class="ri-arrow-down-s-line ml-2"></i>
+        </button>
+        <div id="uniformDropdown" class="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-lg py-2 z-50 hidden">
+          <a href="/uniform#kindergarten" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Kindergarten</a>
+          <a href="/uniform#primary" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Primary School</a>
+          <a href="/uniform#middle" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Middle School</a>
+          <a href="/uniform#senior" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Senior School</a>
+        </div>
+      </div>
+            <div class="relative" id="loginDropdownWrapper">
+        <button id="loginDropdownBtn" class="text-secondary hover:text-primary transition-colors flex items-center focus:outline-none">
+          Login
+          <i class="ri-arrow-down-s-line ml-2"></i>
+        </button>
+        <div id="loginDropdown" class="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-lg py-2 z-50 hidden">
+          <a href="http://benhillschool.in/main/StudentLogin.aspx" target="_blank" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Student Login</a>
+          <a href="http://benhillschool.in/main/ParentLogin.aspx" target="_blank" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Parent Login</a>
+          <a href="http://benhillschool.in/main/StaffLogin.aspx" target="_blank" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Staff Login</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Hamburger icon for mobile -->
+    <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobileMenuButton" aria-label="Open menu">
+      <i class="ri-menu-line text-2xl"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 hidden">
+  <div class="absolute right-0 top-0 w-72 max-w-full h-full bg-white shadow-lg flex flex-col">
+    <div class="flex justify-between items-center px-6 py-4 border-b">
+      <span class="text-xl font-bold text-primary">Menu</span>
+      <button id="closeMobileMenu" class="text-2xl text-secondary" aria-label="Close menu">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-4 px-6 py-6">
+      <a href="/" class="text-secondary font-semibold">Home</a>
+      <div class="relative">
+        <button id="aboutMobileBtn" class="text-secondary w-full text-left focus:outline-none flex items-center justify-between">
+          About
+          <i class="ri-arrow-down-s-line ml-2"></i>
+        </button>
+        <div id="aboutMobileDropdown" class="mt-2 ml-4 bg-white shadow-lg rounded-lg py-2 z-50 hidden">
+          <a href="/about" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">About Us</a>
+          <a href="/faculty" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Faculties</a>
+          <a href="/#facilities"  class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Facilities</a>
+        </div>
+      </div>
+      
+      <a href="/document" class="text-secondary">Mandatory Disclosure</a>
+      <a href="/gallary" class="text-secondary">Gallery</a>
+      <a href="/admission" class="text-secondary">Admissions</a>
+      <a href="/news" class="text-secondary">News</a>
+      <a href="/contact" class="text-secondary">Contact</a>
+      
+      <div class="relative">
+        <button id="uniformMobileBtn" class="text-secondary w-full text-left focus:outline-none flex items-center justify-between">
+          Uniforms
+          <i class="ri-arrow-down-s-line ml-2"></i>
+        </button>
+        <div id="uniformMobileDropdown" class="mt-2 ml-4 bg-white shadow-lg rounded-lg py-2 z-50 hidden">
+          <a href="/uniform#kindergarten" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Kindergarten</a>
+          <a href="/uniform#primary" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Primary School</a>
+          <a href="/uniform#middle" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Middle School</a>
+          <a href="/uniform#senior" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Senior School</a>
+        </div>
+      </div>
+
+       <div class="relative">
+        <button id="loginMobileBtn" class="text-secondary w-full text-left focus:outline-none flex items-center justify-between">
+          Login
+          <i class="ri-arrow-down-s-line ml-2"></i>
+        </button>
+        <div id="loginMobileDropdown" class="mt-2 ml-4 bg-white shadow-lg rounded-lg py-2 z-50 hidden">
+          <a href="http://benhillschool.in/main/StudentLogin.aspx" target="_blank" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Student Login</a>
+          <a href="http://benhillschool.in/main/ParentLogin.aspx" target="_blank" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Parent Login</a>
+          <a href="http://benhillschool.in/main/StaffLogin.aspx" target="_blank" class="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 transition-colors">Staff Login</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // ==================== LOGIN DROPDOWNS ====================
+
+  // Desktop Login dropdown toggle
+  const loginDropdownBtn = document.getElementById("loginDropdownBtn");
+  const loginDropdown = document.getElementById("loginDropdown");
+
+  loginDropdownBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    loginDropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      !loginDropdownBtn.contains(e.target) &&
+      !loginDropdown.contains(e.target)
+    ) {
+      loginDropdown.classList.add("hidden");
+    }
+  });
+
+  // Mobile Login dropdown toggle
+  const loginMobileBtn = document.getElementById("loginMobileBtn");
+  const loginMobileDropdown = document.getElementById("loginMobileDropdown");
+
+  loginMobileBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    loginMobileDropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!loginMobileBtn.contains(e.target) && !loginMobileDropdown.contains(e.target)) {
+      loginMobileDropdown.classList.add("hidden");
+    }
+  });
+
+  // ==================== ABOUT DROPDOWNS ====================
+
+  // Desktop About dropdown toggle
+  const aboutDesktopBtn = document.getElementById("aboutDesktopBtn");
+  const aboutDesktopDropdown = document.getElementById("aboutDesktopDropdown");
+
+  aboutDesktopBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    aboutDesktopDropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      !aboutDesktopBtn.contains(e.target) &&
+      !aboutDesktopDropdown.contains(e.target)
+    ) {
+      aboutDesktopDropdown.classList.add("hidden");
+    }
+  });
+
+  // Mobile About dropdown toggle
+  const aboutBtn = document.getElementById("aboutMobileBtn");
+  const aboutDropdown = document.getElementById("aboutMobileDropdown");
+
+  aboutBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    aboutDropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
+      aboutDropdown.classList.add("hidden");
+    }
+  });
+
+  // ==================== HAMBURGER MENU LOGIC ====================
+
+  const mobileMenuButton = document.getElementById("mobileMenuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeMobileMenu = document.getElementById("closeMobileMenu");
+
+  mobileMenuButton.addEventListener("click", function () {
+    mobileMenu.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  });
+
+  closeMobileMenu.addEventListener("click", function () {
+    mobileMenu.classList.add("hidden");
+    document.body.style.overflow = "";
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileMenu.querySelectorAll("a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      mobileMenu.classList.add("hidden");
+      document.body.style.overflow = "";
+    });
+  });
+
+  // Uniforms Dropdown for Desktop
+  const uniformDropdownBtn = document.getElementById("uniformDropdownBtn");
+  const uniformDropdown = document.getElementById("uniformDropdown");
+
+  uniformDropdownBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    uniformDropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      !uniformDropdownBtn.contains(e.target) &&
+      !uniformDropdown.contains(e.target)
+    ) {
+      uniformDropdown.classList.add("hidden");
+    }
+  });
+
+  // Uniforms Dropdown for Mobile
+  const uniformMobileBtn = document.getElementById("uniformMobileBtn");
+  const uniformMobileDropdown = document.getElementById("uniformMobileDropdown");
+
+  uniformMobileBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    uniformMobileDropdown.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      !uniformMobileBtn.contains(e.target) &&
+      !uniformMobileDropdown.contains(e.target)
+    ) {
+      uniformMobileDropdown.classList.add("hidden");
+    }
+  });
+});
+</script>

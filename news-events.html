@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events - Benhill English School</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#822811", secondary: "#0b1a36" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+    <style>
+      body { font-family: 'Poppins', sans-serif; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+      .news-card:hover { box-shadow: 0 8px 32px rgba(11,26,54,0.08); }
+      .event-date { min-width: 56px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    {% include 'header.html' %}
+
+    <main class="container mx-auto px-4 py-16">
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">News & Events</h1>
+            <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+            <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">
+                Stay updated with the latest news, announcements, and upcoming events at Benhill English School. Explore our vibrant campus life and never miss an important date!
+            </p>
+        </section>
+
+        <!-- Featured News -->
+        <section class="mb-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center">Featured News</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="news-card bg-white rounded-lg shadow-md overflow-hidden transition-shadow">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrWZxsNM8U1Oy6Ezf01QZz8gexjKLohXYvBCWU-prSuINKCL8Q6Su0VlR_jU-eGNU_eoM_clnB5Ur-Ueqry0jzHq-8P6Z931FBgliPiR0UC7GCZWMxlBXJ_3flWtLm0J90yHHliTw=s680-w680-h510-rw" alt="Admission Open" class="w-full h-56 object-cover object-top" />
+                    <div class="p-6">
+                        <span class="inline-block bg-primary text-white text-xs font-medium px-3 py-1 rounded mb-4">Admissions</span>
+                        <h3 class="text-xl font-bold text-secondary mb-2">Admission Open for 2025–26 Academic Year</h3>
+                        <p class="text-gray-600 mb-4">
+                            We are pleased to announce that admissions for the 2025-26 academic year are now open. Parents are invited to visit our campus and learn more about our educational philosophy and facilities.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">June 3, 2025</span>
+                            <a href="admission.html" class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-button whitespace-nowrap transition-colors">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card bg-white rounded-lg shadow-md overflow-hidden transition-shadow">
+                    <img src="https://www.benhillschool.org/images/gallery/school-days/behill-school-days-1.jpg" alt="Annual Day" class="w-full h-56 object-cover object-top" />
+                    <div class="p-6">
+                        <span class="inline-block bg-secondary text-white text-xs font-medium px-3 py-1 rounded mb-4">Event</span>
+                        <h3 class="text-xl font-bold text-secondary mb-2">Annual Day Celebrations</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our Annual Day was a grand success, featuring student performances, awards, and a celebration of achievements. Thank you to all parents and staff for your support!
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">May 20, 2025</span>
+                            <a href="/gallary" class="bg-secondary hover:bg-secondary/90 text-white font-medium py-2 px-6 rounded-button whitespace-nowrap transition-colors">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card bg-white rounded-lg shadow-md overflow-hidden transition-shadow">
+                    <img src="https://readdy.ai/api/search-image?query=students%20science%20fair%20school%20project%20exhibition%20professional%20education%20photography&width=400&height=300&seq=1&orientation=landscape" alt="Science Fair" class="w-full h-56 object-cover object-top" />
+                    <div class="p-6">
+                        <span class="inline-block bg-primary text-white text-xs font-medium px-3 py-1 rounded mb-4">Competition</span>
+                        <h3 class="text-xl font-bold text-secondary mb-2">Science Fair Winners Announced</h3>
+                        <p class="text-gray-600 mb-4">
+                            Congratulations to our talented students who excelled in the annual Science Fair. Their innovative projects impressed judges and inspired their peers.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">April 10, 2025</span>
+                            <a href="/clubs" class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-button whitespace-nowrap transition-colors">See Clubs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section>
+            <h2 class="text-2xl md:text-3xl font-bold text-secondary mb-8 text-center">Upcoming Events</h2>
+            <div class="space-y-8 max-w-2xl mx-auto">
+                <div class="flex gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow items-center">
+                    <div class="event-date text-center">
+                        <div class="bg-secondary text-white text-sm font-medium p-1 rounded-t">JUN</div>
+                        <div class="bg-gray-100 text-secondary font-bold text-xl p-2 rounded-b">15</div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-secondary mb-1">School Reopening</h4>
+                        <p class="text-gray-600 text-sm">
+                            The school reopens for the new academic year. All students are required to be in proper uniform.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow items-center">
+                    <div class="event-date text-center">
+                        <div class="bg-secondary text-white text-sm font-medium p-1 rounded-t">JUL</div>
+                        <div class="bg-gray-100 text-secondary font-bold text-xl p-2 rounded-b">02</div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-secondary mb-1">Annual Results Day</h4>
+                        <p class="text-gray-600 text-sm">
+                            Annual examination results will be published. Parents are invited to meet with teachers.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow items-center">
+                    <div class="event-date text-center">
+                        <div class="bg-secondary text-white text-sm font-medium p-1 rounded-t">JUL</div>
+                        <div class="bg-gray-100 text-secondary font-bold text-xl p-2 rounded-b">16</div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-secondary mb-1">Victory Day Celebration</h4>
+                        <p class="text-gray-600 text-sm">
+                            Special assembly and cultural program to commemorate Victory Day.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow items-center">
+                    <div class="event-date text-center">
+                        <div class="bg-secondary text-white text-sm font-medium p-1 rounded-t">AUG</div>
+                        <div class="bg-gray-100 text-secondary font-bold text-xl p-2 rounded-b">05</div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-secondary mb-1">Club Inaugurations</h4>
+                        <p class="text-gray-600 text-sm">
+                            Official inauguration of all school clubs for the new academic year.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include 'footer.html' %}
+
+    <script id="navigation-script">
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuButton = document.getElementById("mobileMenuButton");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const closeMobileMenu = document.getElementById("closeMobileMenu");
+
+            mobileMenuButton.addEventListener("click", function () {
+                mobileMenu.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+            });
+
+            closeMobileMenu.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                document.body.style.overflow = "";
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.add("hidden");
+                    document.body.style.overflow = "";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
